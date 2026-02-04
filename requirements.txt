@@ -1,0 +1,21 @@
+# Cloud-native ML system on SageMaker
+# Python 3.10+ recommended
+
+# Data & ML
+numpy>=1.24,<2
+pandas>=2.0
+matplotlib>=3.7
+PyYAML>=6.0
+scikit-learn>=1.3
+torch>=2.0
+
+# AWS
+
+sagemaker>=2.200.0
+boto3>=1.34
+
+# Tests
+pytest>=7.0
+
+# Optional: local dev / running scripts
+# (SageMaker jobs use their own container images)

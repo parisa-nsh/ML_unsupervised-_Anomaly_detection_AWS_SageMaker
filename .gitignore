@@ -1,0 +1,32 @@
+# Data and artifacts (local)
+data/
+*.csv
+*.pt
+*.pth
+
+# Python
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# AWS / SageMaker (local config, do not commit credentials)
+.env
+.env.local
+*.pem
+
+# Build / dist
+dist/
+build/
+*.egg-info/
+*.egg

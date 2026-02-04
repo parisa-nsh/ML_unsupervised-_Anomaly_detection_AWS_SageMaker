@@ -1,0 +1,33 @@
+# Default paths and hyperparameters.
+# Environment variables override these (e.g. SAGEMAKER_BUCKET, SAGEMAKER_ROLE).
+
+pipeline:
+  data_dir: data
+  n_samples: 1000
+  epochs: 2
+  batch_size: 64
+  rolling_window: 12
+  top_n: 10
+
+data:
+  raw_subdir: raw
+  features_subdir: features
+  model_subdir: model
+  scores_subdir: scores
+  evaluation_subdir: evaluation
+
+training:
+  encoding_dim: 8
+  lr: 0.0005
+
+sagemaker:
+  raw_data_prefix: data/raw
+  features_prefix: data/features
+  model_prefix: models/autoencoder
+  scores_prefix: data/scores
+  processing_job_prefix: sensor-features
+  training_job_prefix: anomaly-autoencoder
+  inference_job_prefix: anomaly-scores
+  processing_instance_type: ml.m5.xlarge
+  training_instance_type: ml.m5.xlarge
+  inference_instance_type: ml.m5.xlarge
