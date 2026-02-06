@@ -219,6 +219,24 @@ def main() -> int:
             f.write(html)
         print(f"HTML report written to {html_path}", file=sys.stderr)
 
+        # CSV: summary (one row) and top anomalies (table)
+        summary_row = {
+            "n_samples": stats["n_samples"],
+            "n_valid": stats["n_valid"],
+            "mean": stats.get("mean"),
+            "std": stats.get("std"),
+            "min": stats.get("min"),
+            "max": stats.get("max"),
+        }
+        for p, v in (stats.get("percentiles") or {}).items():
+            summary_row[f"p{p}"] = v
+        pd.DataFrame([summary_row]).to_csv(out_dir / "evaluation_summary.csv", index=False)
+        print(f"Summary CSV written to {out_dir / 'evaluation_summary.csv'}", file=sys.stderr)
+
+        top_idx = scores.nlargest(args.top_n).index
+        df.loc[top_idx].to_csv(out_dir / "evaluation_top_anomalies.csv", index=False)
+        print(f"Top anomalies CSV written to {out_dir / 'evaluation_top_anomalies.csv'}", file=sys.stderr)
+
     return 0
 
 

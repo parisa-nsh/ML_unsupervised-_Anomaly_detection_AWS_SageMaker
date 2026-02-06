@@ -74,7 +74,9 @@ def main() -> int:
 
     estimator.fit({"training": train_uri})
 
+    job_name = estimator.latest_training_job.name
     print(f"Training completed. Model at {estimator.model_data}", file=sys.stderr)
+    print(f"Set TRAINING_JOB_NAME={job_name} before running run_batch_inference.py", file=sys.stderr)
     return 0
 
 

@@ -148,7 +148,7 @@ tests/
 
 ### Prerequisites for running on SageMaker
 
-To run Processing, Training, and Batch Inference on AWS (instead of locally), you need: an S3 bucket, an IAM role for SageMaker, and AWS CLI (or env vars) configured on your machine. Step-by-step: **[docs/SAGEMAKER_SETUP.md](docs/SAGEMAKER_SETUP.md)**.
+To run Processing, Training, and Batch Inference on AWS (instead of locally), you need: an S3 bucket, an IAM role for SageMaker, and AWS CLI (or env vars) configured on your machine. Step-by-step: **[docs/SAGEMAKER_SETUP.md](docs/SAGEMAKER_SETUP.md)**. To run the pipeline end-to-end on SageMaker: **[docs/RUN_ON_SAGEMAKER.md](docs/RUN_ON_SAGEMAKER.md)**.
 
 ### Local end-to-end pipeline (no AWS)
 
